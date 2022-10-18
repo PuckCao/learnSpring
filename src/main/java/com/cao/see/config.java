@@ -1,4 +1,4 @@
-package com.cao.demo;
+package com.cao.see;
 
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
