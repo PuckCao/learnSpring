@@ -6,6 +6,7 @@ import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.beans.factory.support.AbstractBeanDefinition;
 import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigUtils;
 
 import java.util.Arrays;
@@ -43,6 +44,8 @@ public class TestDefaultListableBeanFactory {
         defaultListableBeanFactory.getBeansOfType(BeanPostProcessor.class).values().forEach(defaultListableBeanFactory::addBeanPostProcessor);
         defaultListableBeanFactory.getBeansOfType(BeanPostProcessor.class).values().stream().sorted(defaultListableBeanFactory.getDependencyComparator())
                 .forEach(x -> {});
+        System.out.println("**"+defaultListableBeanFactory.getBeanProvider(Bean1.class));
+        System.out.println(defaultListableBeanFactory.isTypeMatch("bean1",Bean2.class));
 
     }
 }

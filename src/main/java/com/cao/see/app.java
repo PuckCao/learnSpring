@@ -18,16 +18,11 @@ import java.util.Map;
  */
 @SpringBootApplication
 public class app {
-    public static void main(String[] args) throws Exception{
-        ConfigurableApplicationContext applicationContext = SpringApplication.run(app.class, args);
-        Field declaredField = DefaultSingletonBeanRegistry.class.getDeclaredField("singletonObjects");
-        System.out.println(declaredField);
-        declaredField.setAccessible(true);
-        ConfigurableListableBeanFactory beanFactory = applicationContext.getBeanFactory();
-        Map<String,Object> objectMap = (Map<String,Object>)declaredField.get(beanFactory);
-        System.out.println(applicationContext.getEnvironment());
-        DefaultListableBeanFactory defaultListableBeanFactory = new DefaultListableBeanFactory();
-        BeanDefinitionBuilder beanDefinitionBuilder = BeanDefinitionBuilder.genericBeanDefinition(config.class);
-
+    public static void main(String[] args) throws Exception {
+        ConfigurableApplicationContext context = SpringApplication.run(app.class, args);
+        Object life = context.getBean("life");
+        System.out.println(life);
+        System.out.println(life.getClass());
+        context.close();
     }
 }
