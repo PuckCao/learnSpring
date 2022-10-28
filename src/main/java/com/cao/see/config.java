@@ -1,5 +1,7 @@
 package com.cao.see;
 
+import com.cao.see.Beans.Bean1;
+import com.cao.see.Beans.Bean2;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -22,19 +24,4 @@ public class config {
 }
 
 
-@Data
-class Bean1{
-    private String name;
-
-    @Autowired
-    private Bean2 bean2;
-
-
-}
-
-@Data
-class Bean2{
-    private String name;
-
-}
 

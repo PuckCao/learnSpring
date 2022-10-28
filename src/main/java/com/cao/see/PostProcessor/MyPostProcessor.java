@@ -1,19 +1,17 @@
 package com.cao.see.PostProcessor;
 
-import com.cao.see.Life;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.PropertyValues;
 import org.springframework.beans.factory.config.DestructionAwareBeanPostProcessor;
 import org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessor;
-import org.springframework.stereotype.Component;
 
 /**
  * @author Puck Cao
  * @date 2022/10/21 11:03 AM
  */
-@Component
+
 public class MyPostProcessor implements InstantiationAwareBeanPostProcessor, DestructionAwareBeanPostProcessor {
     private static final Logger logger = LoggerFactory.getLogger(Life.class);
 
