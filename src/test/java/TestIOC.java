@@ -1,21 +1,17 @@
-package com.cao.see;
-
-
-import org.springframework.beans.factory.support.DefaultListableBeanFactory;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ConfigurableApplicationContext;
+import com.cao.see.config;
+import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.support.GenericApplicationContext;
+
+import java.util.Objects;
 
 /**
  * @author Puck Cao
- * @date 2022/10/4 7:31 PM
+ * @date 2022/12/8 2:44 PM
  */
-@SpringBootApplication()
-public class app2 {
-    public static void main(String[] args) {
+public class TestIOC {
+
+    @Test
+    public void test() {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(config.class);
 //        ConfigurableApplicationContext context = SpringApplication.run(app2.class);
 //        for (String beanDefinitionName : context.getBeanDefinitionNames()) {
@@ -23,5 +19,10 @@ public class app2 {
 //        }
 //        ConfigurableApplicationContext context = SpringApplication.run(app2.class);
 //        System.out.println(context);
+        System.out.println(context);
+        for (String s : context.getBeanNamesForType(Objects.class)) {
+            System.out.println(s);
+        }
     }
 }
+

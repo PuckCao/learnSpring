@@ -5,6 +5,7 @@ import com.cao.see.Beans.Bean2;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -12,6 +13,7 @@ import org.springframework.context.annotation.Configuration;
  * @date 2022/10/5 10:31 PM
  */
 @Configuration
+@ComponentScan(basePackages = {"com.cao"})
 public class config {
     @Bean
     public Bean1 bean1(){
