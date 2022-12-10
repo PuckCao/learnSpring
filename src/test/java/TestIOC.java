@@ -3,7 +3,6 @@ import org.junit.Test;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import java.util.Objects;
 
 /**
  * @author Puck Cao
