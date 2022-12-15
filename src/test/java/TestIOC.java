@@ -1,6 +1,8 @@
-import com.cao.see.config;
+
+import com.cao.see.webconfig;
 import org.junit.Test;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
+import org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 
@@ -12,13 +14,14 @@ public class TestIOC {
 
     @Test
     public void test() {
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(config.class);
+//        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(config.class);
 //        ConfigurableApplicationContext context = SpringApplication.run(app2.class);
 //        for (String beanDefinitionName : context.getBeanDefinitionNames()) {
 //            System.out.println(beanDefinitionName);
 //        }
 //        ConfigurableApplicationContext context = SpringApplication.run(app2.class);
 //        System.out.println(context);
+        AnnotationConfigServletWebServerApplicationContext context = new AnnotationConfigServletWebServerApplicationContext(webconfig.class);
     }
 }
 
