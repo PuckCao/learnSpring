@@ -19,14 +19,6 @@ public class TestIOC {
 //        }
 //        ConfigurableApplicationContext context = SpringApplication.run(app2.class);
 //        System.out.println(context);
-        System.out.println(context);
-        for (String beanDefinitionName : context.getBeanFactory().getBeanDefinitionNames()) {
-            System.out.println(beanDefinitionName);
-        }
-        System.out.println("-----------");
-        for (BeanFactoryPostProcessor beanFactoryPostProcessor : context.getBeanFactoryPostProcessors()) {
-            System.out.println(beanFactoryPostProcessor);
-        }
     }
 }
 
