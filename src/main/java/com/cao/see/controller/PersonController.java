@@ -1,5 +1,6 @@
 package com.cao.see.controller;
 
+import com.cao.see.aop.UseTimeIntercepter;
 import com.cao.see.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,6 +20,7 @@ public class PersonController {
     private PersonService personService;
 
 
+    @UseTimeIntercepter
     @GetMapping("/test")
     public String test1(){
         return "test1";
