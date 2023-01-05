@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.DispatcherServlet;
+import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 
 /**
  * @author Puck Cao
@@ -32,5 +33,9 @@ public class webconfig {
         //直接初始化servlet
         registrationBean.setLoadOnStartup(1);
         return registrationBean;
+    }
+    @Bean
+    public RequestMappingHandlerMapping requestMappingHandlerMapping(){
+        return new RequestMappingHandlerMapping();
     }
 }
